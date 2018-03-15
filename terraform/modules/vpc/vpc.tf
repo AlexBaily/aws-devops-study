@@ -38,4 +38,5 @@ resource "aws_route_table" "public" {
 
 }
 
-
+output "vpc-id"     { value = "${aws_vpc.vpc.id}" }
+output "subnet_ids" { value = "${join(",", aws_subnet.public.*.id)}" }
